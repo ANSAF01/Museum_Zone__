@@ -590,7 +590,14 @@
       handleScrollButtonVisibility(); 
 
 
-    window.onbeforeunload = function () { // Ensure scroll to top on refresh/leaving page
+ if (mainContentEl && !mainContentEl.classList.contains('hidden')) {
+          
+          updateActiveNav('intro');
+      }
+    });
+
+
+     window.onbeforeunload = function () { // Ensure scroll to top on refresh/leaving page
         window.scrollTo(0, 0);
     };
 
