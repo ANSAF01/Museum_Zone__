@@ -1,12 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./public/**/*.html", // Scan HTML files in the public folder
-    "./public/**/*.js",   // Scan JS files in public if they manipulate classes (your script is inline)
-    // Add other paths if you have templates elsewhere
+    "./index.html",         // Scan index.html in the project root for Tailwind classes
+    "./public/**/*.js",     // Scan JavaScript files in the public folder if they dynamically add Tailwind classes
+    // "./public/**/*.html", // This line can be removed if index.html was the only HTML file in public/
+                            // Or kept if other HTML files exist in public/ that use Tailwind classes
+    "./src/**/*.css",       // Scan source CSS files (like input.css) for @apply or theme() usage
   ],
   theme: {
     extend: {
+      // Your custom theme extensions
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
         'playfair': ['Playfair Display', 'serif'],
@@ -18,5 +21,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Any Tailwind plugins you might be using
+  ],
 }
