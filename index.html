@@ -589,17 +589,6 @@
       setupIntroSlideshow(); 
       handleScrollButtonVisibility(); 
 
-      // Scroll restoration and initial nav active state moved inside this load listener
-      if (history.scrollRestoration) {
-        history.scrollRestoration = 'manual';
-      }
-      window.scrollTo(0, 0); // Force scroll to top on load
-      
-      if (mainContentEl && !mainContentEl.classList.contains('hidden')) {
-          // No need to call scrollToSection('intro') here as window.scrollTo(0,0) does the job for refresh
-          updateActiveNav('intro');
-      }
-    });
 
     window.onbeforeunload = function () { // Ensure scroll to top on refresh/leaving page
         window.scrollTo(0, 0);
