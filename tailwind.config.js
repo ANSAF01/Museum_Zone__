@@ -3,9 +3,9 @@ module.exports = {
   content: [
     "./index.html",         // Scan index.html in the project root for Tailwind classes
     "./public/**/*.js",     // Scan JavaScript files in the public folder if they dynamically add Tailwind classes
-    // "./public/**/*.html", // This line can be removed if index.html was the only HTML file in public/
-                            // Or kept if other HTML files exist in public/ that use Tailwind classes
-    "./src/**/*.css",       // Scan source CSS files (like input.css) for @apply or theme() usage
+    // "./public/**/*.html", // This line can be removed if index.html was the only HTML file in public/ that used Tailwind classes
+                            // Or kept if other HTML files exist in public/ that use Tailwind classes and need scanning
+    "./src/**/*.css",       // Good practice: Scan source CSS files (like input.css) for @apply or theme() usage
   ],
   theme: {
     extend: {
